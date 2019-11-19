@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'textarea';
+
+$textarea-height: 100px;
+$textarea-max-width: 300px;
+$textarea-color: color(primary);
+$textarea-color-inactive: color(grayC);
+$textarea-resize: false;
+$label-size: 14px;
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	position: relative;
+	display: block;
+    max-width: $textarea-max-width;
+	margin: 30px 0;
+
+	&__textarea {
+        width: 100%;
+        height: $textarea-height;
+		border: none;
+		border-bottom: 1px solid $textarea-color-inactive;
+		outline: none;
+        padding: 10px;
+        @if $textarea-resize == false {
+            resize: none;
+        }
+
+		&:focus ~ label,
+		&:valid ~ label {
+			top: -10px;
+			font-size: ($label-size / 4) * 3;
+			color: $textarea-color;
+		}
+
+		&:focus ~ span {
+			width: 100%;
+			left: 0;
+		}
+
+	}
+
+	&__bar {
+		position: absolute;
+		bottom: 5px;
+		height: 2px;
+		background: $textarea-color;
+		width: 0;
+		transition: all 200ms ease-in-out;
+	}
+
+	&__bar[data-bar-animation="center"] {
+		left: 50%;
+	}
+
+	&__bar[data-bar-animation="right"] {
+		left: 100%;
+	}
+
+	&__label {
+		position: absolute;
+		color: $textarea-color-inactive;
+		font-size: $label-size;
+		z-index: 1;
+		pointer-events: none;
+		transition: all 200ms ease-in-out;
+		top: 10px;
+		left: 10px;
+	}
+
+}

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'selection-color';
+
+$bg-color: color(primary);
+$text-color: choose-contrast-color($bg-color);
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+
+	p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, blockquote::selection, strong::selection, b::selection, i::selection, em::selection, code::selection, pre::selection, big::selection, sub::selection, sup::selection, del::selection, samp::selection, mark::selection, small::selection, ins::selection {
+		color: $text-color;
+		background: $bg-color;
+	}
+
+}

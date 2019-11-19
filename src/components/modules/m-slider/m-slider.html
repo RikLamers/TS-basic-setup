@@ -1,0 +1,17 @@
+<!-- set data-autoplay="true" to autoplay. If you don't want autoplay, leave it. -->
+<!-- data-interval-time is in ms 5000ms = 5s -->
+<div class="m-slider" data-autoplay="true" data-interval-time="10000">
+    <div class="m-slider__container">
+        <div class="o-img__bg m-slider__slide" data-img="<%= require('../assets/img/cat.jpeg') %>"></div>
+        <div class="o-img__bg m-slider__slide" data-img="<%= require('../assets/img/cat.jpeg') %>"></div>
+    </div>
+    <h1>Georgies, Good Food for a Good Mood</h1>
+    <div class="m-slider__controls">
+        <div class="m-slider__controls--container">
+            <img class="m-slider__previous" src="<%= require('../assets/img/arrow.svg') %>" alt="Previous button" />
+            <ul class="m-slider__dotlist">
+            </ul>
+            <img class="m-slider__next" src="<%= require('../assets/img/arrow.svg') %>" alt="Previous button" />
+        </div>
+    </div>
+</div>

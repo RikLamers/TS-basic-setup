@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'logo';
+
+$logo-width-min: auto;
+$logo-height-min: 75px;
+$logo-width-med: auto;
+$logo-height-med: 100px;
+$logo-width-large: auto;
+$logo-height-large: 115px;
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+    min-width: 50px;
+    min-height: $logo-height-min;
+    width: $logo-width-min;
+    height: $logo-height-min;
+    display: block;
+    padding: 15px;
+    margin: 0;
+
+    @media (min-width: breakpoint-min(sm)) {
+        width: $logo-width-med;
+        height: $logo-height-med;
+    }
+    
+    @media (min-width: breakpoint-min(lg)) {
+        width: $logo-width-large;
+        height: $logo-height-large;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}

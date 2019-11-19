@@ -1,0 +1,69 @@
+/* =============================================================================
+	COLORS
+============================================================================= */
+
+$colors: (
+	white: #ffffff,
+	black: #000000,
+	gray1: #111111,
+	gray2: #222222,
+	gray3: #333333,
+	gray4: #444444,
+	gray5: #555555,
+	gray6: #666666,
+	gray7: #777777,
+	gray8: #888888,
+	gray9: #999999,
+	grayC: #cccccc,
+	grayD: #dddddd,
+	grayE: #eeeeee,
+	blue: #0087b3,
+	blue-dark: #003a4d,
+	blue-light: #90c9da,
+	primary: #e4544f,
+	secondary: #eef06e,
+	tertiary: #ebb044,
+	text: #333333
+);
+
+@function color($color-name) {
+	@return map-get($colors, $color-name)
+}
+
+
+/* =============================================================================
+	VALIDATION COLORS
+============================================================================= */
+
+$colors-validation: (
+	success: #4cae4c,
+	danger: #d9534f,
+	warning: #f0ad4e,
+	info: #007bff
+);
+
+@function validation-color($color-name) {
+	@return map-get($colors-validation, $color-name)
+}
+
+/* =============================================================================
+	SOCIAL MEDIA COLORS
+============================================================================= */
+
+$color-social: (
+	twitter: #00aced,
+	facebook: #3b5998,
+	googleplus: #dd4b39,
+	pinterest: #cb2027,
+	linkedin: #007bb6,
+	youtube: #bb0000,
+	vimeo: #aad450,
+	instagram: #517fa4,
+	flickr: #ff0084,
+	dribbble: #ea4c89,
+	whatsapp: #4dc247
+);
+
+@function social-color($color-name) {
+	@return map-get($color-social, $color-name)
+}

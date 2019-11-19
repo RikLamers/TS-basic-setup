@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+html, body {
+	overflow-x: hidden;
+}
+
+[hidden] {
+	display: none;
+}
+
+[disabled] {
+	cursor: not-allowed;
+}

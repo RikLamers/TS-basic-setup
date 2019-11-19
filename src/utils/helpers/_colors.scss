@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@each $name, $value in $colors {
+	.color--#{$name} {
+		color: $value !important;
+	}
+
+	.background--#{$name} {
+		background-color: $value !important;
+	}
+
+	.border--#{$name} {
+		border-color: $value !important;
+
+		&:hover,
+		&:focus {
+			border-color: darken($value, 10%) !important;
+		}
+	}
+}

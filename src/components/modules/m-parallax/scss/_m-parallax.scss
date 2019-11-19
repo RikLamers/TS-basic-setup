@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'parallax';
+
+// $source: 'https://webdevtrick.com/parallax-effect-in-css/';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    position: relative;
+
+    &__img {
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.7;
+        background-attachment: fixed;
+        height: calc(100vh - 75px);
+    }
+
+    &__disable-mobile {
+        background-attachment: scroll;
+
+        @media (min-width: breakpoint-min(sm)) {
+            background-attachment: fixed;
+        }
+    }
+    
+    &__overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+}
+

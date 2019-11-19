@@ -1,0 +1,237 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'btn';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 1.5rem;
+    color: color(white);
+    background-color: color(primary);
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    outline: none;
+    border: none;
+    user-select: none;
+    border-radius: 5px;
+    transition: all .3s ease-out;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+    overflow: hidden;
+    margin-top: 20px;
+
+    &--rounded {
+        border-radius: 17.5px;
+    }
+
+    &--cornered {
+        border-radius: 0;
+    }
+
+    &:hover {
+        background-color: lighten(color(primary), 10%);
+    }
+
+    &--light {
+        .o-#{$object-name}--hover {
+            background: color(white);
+        }
+    }
+
+    &--dark {
+        .o-#{$object-name}--hover {
+            background: color(black);
+        }
+    }
+
+    &--hover {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+    }
+
+    &--success {
+        background-color: validation-color(success);
+
+        &:hover {
+            background-color: lighten(validation-color(success), 10%);
+        }
+
+    }
+
+    &--danger {
+        background-color: validation-color(danger);
+
+        &:hover {
+            background-color: lighten(validation-color(danger), 10%);
+        }
+
+    }
+
+    &--warning {
+        background-color: validation-color(warning);
+
+        &:hover {
+            background-color: lighten(validation-color(warning), 10%);
+        }
+
+    }
+
+    &--info {
+        background-color: validation-color(info);
+
+        &:hover {
+            background-color: lighten(validation-color(info), 10%);
+        }
+
+    }
+
+    &--outline {
+        background-color: transparent;
+        border: 2px solid color(primary);
+        color: color(primary);
+
+        &:hover {
+            background-color: transparent;
+            border-color: lighten(color(primary), 10%);
+            color: lighten(color(primary), 10%);
+        }
+
+        &--rounded {
+            border-radius: 17.5px;
+        }
+
+        &--success {
+            border-color: validation-color(success);
+            color: validation-color(success);
+    
+            &:hover {
+                border-color: lighten(validation-color(success), 10%);
+                color: lighten(validation-color(success), 10%);
+            }
+    
+        }
+    
+        &--danger {
+            border-color: validation-color(danger);
+            color: validation-color(danger);
+    
+            &:hover {
+                border-color: lighten(validation-color(danger), 10%);
+                color: lighten(validation-color(danger), 10%);
+            }
+    
+        }
+    
+        &--warning {
+            border-color: validation-color(warning);
+            color: validation-color(warning);
+    
+            &:hover {
+                border-color: lighten(validation-color(warning), 10%);
+                color: lighten(validation-color(warning), 10%);
+            }
+    
+        }
+    
+        &--info {
+            border-color: validation-color(info);
+            color: validation-color(info);
+    
+            &:hover {
+                border-color: lighten(validation-color(info), 10%);
+                color: lighten(validation-color(info), 10%);
+            }
+    
+        }
+
+    }
+
+    &--text {
+        background-color: transparent;
+        border: none;
+        color: color(primary);
+        box-shadow: none;
+
+        &:hover {
+            background-color: transparent;
+            border: none;
+            color: lighten(color(primary), 10%);
+        }
+
+        &--success {
+            background: transparent;
+            border: none;
+            color: validation-color(success);
+
+            &:hover {
+                color: lighten(validation-color(success), 10%);
+            }
+
+        }
+
+        &--danger {
+            background: transparent;
+            border: none;
+            color: validation-color(danger);
+
+            &:hover {
+                color: lighten(validation-color(danger), 10%);
+            }
+
+        }
+
+        &--warning {
+            background: transparent;
+            border: none;
+            color: validation-color(warning);
+
+            &:hover {
+                color: lighten(validation-color(warning), 10%);
+            }
+
+        }
+
+        &--info {
+            background: transparent;
+            border: none;
+            color: validation-color(info);
+
+            &:hover {
+                color: lighten(validation-color(info), 10%);
+            }
+
+        }
+
+    }
+
+    &--animation {
+        opacity: 0.1;
+        animation: btnAnimation 5s ease-out;
+    }
+
+}
+
+@keyframes btnAnimation {
+	100% { 
+		width: 600px;
+		height: 600px;
+		border-radius: 600px;
+		opacity: 0;
+		margin: -300px;
+	}
+}
