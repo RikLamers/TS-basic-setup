@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'tab';
+
+$tab-color--primary: color(primary);
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+	width: 100%;
+
+	// OWN STYLING
+	// &__menu {
+	// 	width: 100%;
+	// 	border-bottom: 1px solid $tab-color--primary;
+	// 	padding-bottom: 9px;
+	// }
+
+	// &__item {
+	// 	display: inline;
+	// 	padding: 10px 15px;
+	// 	border: 1px solid $tab-color--primary;
+	// 	border-right: none;
+	// 	cursor: pointer;
+
+	// 	&:last-child {
+	// 		border-right: 1px solid $tab-color--primary;
+	// 	}
+
+	// 	&.active {
+	// 		border-bottom: 1px solid white;
+	// 	}
+
+	// }
+
+	// MATERIAL DESIGN
+	&__menu {
+		margin: 30px auto;
+		display: flex;
+		list-style-type: none;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		padding: 0;
+	}
+
+	&__item {
+		padding: 20px 0px;
+		background: white;
+		max-width: 150px;
+		overflow: hidden;
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+		user-select: none;
+
+		&--light {
+			.m-#{$module-name}__item--circle {
+				background: color(white);
+			}
+		}
+
+		&--dark {
+			.m-#{$module-name}__item--circle {
+				background: color(black);
+			}
+		}
+
+		&--circle {
+			width: 0px;
+			height: 0px;
+			position: absolute;
+		}
+
+		&--animation {
+			opacity: 0.1;
+			animation: tabberAnimation 5s ease-out;
+		}
+
+	}
+
+	&__indicator {
+		max-width: 150px;
+		height: 3px;
+		background: color(primary);
+		position: absolute;
+		margin-left: 0;		
+		margin-top: 64px;
+		transition: margin 0.5s ease;
+	}
+
+	&__content {
+		
+		&--section {
+			display: none;
+		}
+
+	}
+
+}
+
+@keyframes tabberAnimation {
+	100% { 
+		width: 600px;
+		height: 600px;
+		border-radius: 600px;
+		opacity: 0;
+		margin: -300px;
+	}
+}

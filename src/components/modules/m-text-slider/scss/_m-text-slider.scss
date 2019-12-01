@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'text-slider';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    background: color(white);
+    padding: 25px 50px;
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.15);
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    &__container {
+        width: 100%;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__slide {
+        height: 100%;
+        width: 100%;
+        flex-shrink: 0;
+        transition: transform 1s ease-in-out;
+
+        h6 {
+            text-align: center;
+        }
+
+    }
+
+    &__controls {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 105%;
+        min-height: 10px;
+
+        &--container {
+            display: flex;
+            justify-content: space-between;
+
+            @media (min-width: breakpoint-min(md)) {
+                padding: 0 10px;
+            }
+
+        }
+
+    }
+
+    &__previous,
+    &__next {
+        width: 6px;
+        min-width: 6px;
+        height: 10px;
+        min-height: 10px;
+        cursor: pointer;
+    }
+
+    &__next {
+        transform: rotate(180deg);
+    }
+
+}

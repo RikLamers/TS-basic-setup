@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'pagetransition';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@import './layer-bottom/h.layer-bottom';
+@import './layer-left/h.layer-left';
+@import './layer-right/h.layer-right';
+@import './layer-top/h.layer-top';
+@import './lines/h.lines';
+@import './tiles/h.tiles';
+@import './triangle-fold/h.triangle-fold';
+@import './triangle-left/h.triangle-left';
+@import './triangle-right/h.triangle-right';

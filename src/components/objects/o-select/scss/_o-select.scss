@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'select';
+
+$inputfield-height: 40px;
+$inputfield-max-width: 300px;
+$inputfield-color: color(primary);
+$inputfield-color-inactive: color(grayC);
+$label-size: 14px;
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+// .o-#{$object-name} {
+//     border: none;
+//     position: relative;
+
+//     label {
+//         position: absolute;
+//         display: block;
+//     }
+
+// }
+
+
+.o-#{$object-name} {
+	position: relative;
+	display: block;
+	max-width: $inputfield-max-width;
+	margin: 30px 0;
+
+	&__selector {
+		width: 100%;
+		border: none;
+        border-bottom: 1px solid $inputfield-color-inactive;
+		outline: none;
+        // padding: 10px;
+        height: 42px;
+
+		&:focus ~ label,
+		&:valid ~ label {
+			top: -15px;
+			font-size: ($label-size / 4) * 3;
+			color: $inputfield-color;
+		}
+
+		&:focus ~ span {
+			width: 100%;
+			left: 0;
+        }
+
+	}
+
+	&__bar {
+		position: absolute;
+		bottom: 0.5px;
+		height: 2px;
+		background: $inputfield-color;
+		width: 0;
+		transition: all 200ms ease-in-out;
+	}
+
+	&__bar[data-bar-animation="center"] {
+		left: 50%;
+	}
+
+	&__bar[data-bar-animation="right"] {
+		left: 100%;
+	}
+
+	&__label {
+		position: absolute;
+		color: $inputfield-color-inactive;
+		font-size: $label-size;
+		z-index: 1;
+		pointer-events: none;
+		transition: all 200ms ease-in-out;
+		top: 10px;
+		left: 10px;
+	}
+
+}

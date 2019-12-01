@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NAAM | </title>
+    <script src="https://browser.sentry-cdn.com/5.6.3/bundle.min.js" integrity="sha384-/Cqa/8kaWn7emdqIBLk3AkFMAHBk0LObErtMhO+hr52CntkaurEnihPmqYj3uJho" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>" />
+</head>
+<body>
+
+    <div class="o-pagetransition" data-transition="triangle-fold">
+        <div class="o-pagetransition__triangle"></div>
+        <div class="o-pagetransition__triangle"></div>
+        <div class="o-pagetransition__triangle"></div>
+        <div class="o-pagetransition__triangle"></div>
+    </div>
+
+    <header class="m-header">
+        <img class="o-logo" src="<%= require('../assets/img/cat.jpeg') %>" alt="Logo" />
+        <nav class="m-navigation">
+            <div class="o-hamburger o-hamburger__right">
+                <div class="o-hamburger__menu" data-hamburger="modern"></div>
+            </div>
+            <ul class="m-navigation__list">
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" href="/">Home</a>
+                </li>
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" href="/about.html">About</a>
+                </li>
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" href="javascript:void(0);">Contact</a>
+                </li>
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" class="o-btn" href="javascript:void(0);">
+                        Bestellen
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <main data-router-wrapper>
+            <div data-router-view="about">
+                <section>
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Basic-setup</h1>
+                            <h2>Basic-setup</h2>
+                            <h3>Basic-setup</h3>
+                            <h4>Basic-setup</h4>
+                            <h5>Basic-setup</h5>
+                            <h6>Basic-setup</h6>
+                            <p>Sed posuere consectetur est at lobortis.</p>
+                            <a href="./about.html">Consectetur Lorem</a>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="m-slider" data-autoplay="true" data-interval-time="10000">
+                        <div class="m-slider__container">
+                            <div class="o-img__bg m-slider__slide" data-img="<%= require('../assets/img/cat.jpeg') %>"></div>
+                            <div class="o-img__bg m-slider__slide" data-img="<%= require('../assets/img/cat.jpeg') %>"></div>
+                        </div>
+                        <h1>Georgies, Good Food for a Good Mood</h1>
+                        <div class="m-slider__controls">
+                            <div class="m-slider__controls--container">
+                                <img class="m-slider__previous" src="<%= require('../assets/img/arrow.svg') %>" alt="Previous button" />
+                                <ul class="m-slider__dotlist">
+                                </ul>
+                                <img class="m-slider__next" src="<%= require('../assets/img/arrow.svg') %>" alt="Previous button" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="m-tab">
+                        <ul class="m-tab__menu">
+                            <li data-tab-id="1" class="m-tab__item m-tab__item--dark active">
+                                Content 1
+                            </li>
+                            <li data-tab-id="2" class="m-tab__item m-tab__item--dark">
+                                Content 2
+                            </li>
+                            <li data-tab-id="3" class="m-tab__item m-tab__item--dark">
+                                Content 3
+                            </li>
+                            <div class="m-tab__indicator"></div>
+                        </ul>
+                        <div class="m-tab__content">
+                            <div class="container">
+                                <div class="m-tab__content--section" data-tab-content-id="1">
+                                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                </div>
+                                <div class="m-tab__content--section" data-tab-content-id="2">
+                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue.</p>
+                                </div>
+                                <div class="m-tab__content--section" data-tab-content-id="3">
+                                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                    <p>Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.externals.entry %>"></script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

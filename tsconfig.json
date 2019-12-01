@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "target": "es5",
+        "module": "es2015",
+        "allowJs": true,
+        "lib": [
+            "dom",
+            "es2017"
+        ],
+        "baseUrl": "./",
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    "include": [
+        "src/**/*"
+    ]
+}

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'intersection';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+
+    &__animation {
+        opacity: 0;
+    }
+
+}
+
+@keyframes animation-down {
+
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to  {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes animation-up {
+
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to  {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes animation-right {
+
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to  {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes animation-left {
+
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to  {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}

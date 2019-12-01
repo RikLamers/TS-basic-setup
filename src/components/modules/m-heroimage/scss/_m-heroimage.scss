@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'heroimage';
+
+$heading-color: color(white);
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 200px;
+
+    @media (min-width: breakpoint-min(md)) {
+        height: 300px;
+    }
+
+    @media (min-width: breakpoint-min(xl)) {
+        height: 450px;
+    }
+
+    &__img {
+        width: 100vw;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    h1 {
+        color: $heading-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+
+        @media (min-width: breakpoint-min(xs)) {
+            padding: 30px;
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+            padding: 50px;
+        }
+
+    }
+
+}

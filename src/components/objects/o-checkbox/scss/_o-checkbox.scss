@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+// Source: https://codepen.io/hansmaad/pen/qaGrQL?editors=1100
+
+$object-name: 'checkbox';
+
+$checkbox-color-primary--checked: color(primary);
+$checkbox-color-border: color(grayC);
+$checkbox-color-border--disabled: color(gray7);
+$checkbox-color--checked--disabled: color(gray7);
+
+$checkbox-margin: 1em 0;
+$checkbox-size: 1.25em;
+$checkbox-padding: .25em;
+$checkbox-border-width: 2px;
+$checkbox-border-radius: 0.125em;
+$checkbox-checkmark-width: 0.125em;
+$checkbox-checkmark-color: color(white);
+$checkbox-checkmark-size: $checkbox-size - 2 * $checkbox-padding;
+$checkbox-label-padding: .75em;
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	position: relative;
+	margin: $checkbox-margin;
+	text-align: left;
+	
+	label {
+		cursor: pointer;
+		display: inline;
+		line-height: $checkbox-size;
+		vertical-align: top;
+		clear: both;
+		padding-left: 1px;
+
+		&:not(:empty) {
+			padding-left: $checkbox-label-padding;
+		}
+		
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		
+		&:before {
+			// box
+			width: $checkbox-size;
+			height: $checkbox-size;
+			background: color(white);
+			border: $checkbox-border-width solid $checkbox-color-border;
+			border-radius: $checkbox-border-radius;
+			cursor: pointer;
+			transition: background .3s;
+		}
+		
+		&:after {
+			// checkmark
+		}    
+	}
+	
+	input[type="checkbox"] {
+		outline: 0;
+		visibility: hidden;
+		width: $checkbox-size;
+		margin: 0;
+		display: block;
+		float: left;
+		font-size: inherit;
+
+		&:checked {
+			+ label:before {
+				background: $checkbox-color-primary--checked;
+				border:none;
+			}
+
+			+ label:after {
+				transform: translate($checkbox-padding, ($checkbox-size / 2) - ($checkbox-checkmark-size / 2.6)) rotate(-45deg);
+				width: $checkbox-checkmark-size;
+				height: $checkbox-checkmark-size / 2;
+				
+				border: $checkbox-checkmark-width solid $checkbox-checkmark-color;
+				border-top-style: none;
+				border-right-style: none;
+			} 
+		}
+		
+		&:disabled {
+
+			+ label:before {
+				border-color: $checkbox-color-border--disabled;
+			}
+
+			&:checked {
+
+				+ label:before {
+					background: $checkbox-color--checked--disabled;
+				}
+
+			}
+
+		}
+	}
+
+}

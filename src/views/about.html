@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NAAM | </title>
+    <script src="https://browser.sentry-cdn.com/5.6.3/bundle.min.js" integrity="sha384-/Cqa/8kaWn7emdqIBLk3AkFMAHBk0LObErtMhO+hr52CntkaurEnihPmqYj3uJho" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>" />
+</head>
+<body>
+
+    <div class="o-pagetransition" data-transition="triangle-fold">
+        <div class="o-pagetransition__triangle"></div>
+        <div class="o-pagetransition__triangle"></div>
+        <div class="o-pagetransition__triangle"></div>
+        <div class="o-pagetransition__triangle"></div>
+    </div>
+
+    <header class="m-header m-header__sticky">
+        <img class="o-logo" src="<%= require('../assets/img/cat.jpeg') %>" alt="Logo" />
+        <nav class="m-navigation">
+            <div class="o-hamburger o-hamburger__right">
+                <div class="o-hamburger__menu" data-hamburger="modern"></div>
+            </div>
+            <ul class="m-navigation__list">
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" href="/">Home</a>
+                </li>
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" href="/about.html">About</a>
+                </li>
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" href="javascript:void(0);">Contact</a>
+                </li>
+                <li class="m-navigation__item">
+                    <a class="m-navigation__link" class="o-btn" href="javascript:void(0);">
+                        Bestellen
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <main data-router-wrapper>
+            <div data-router-view="home">
+                <section>
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>About</h1>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.externals.entry %>"></script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

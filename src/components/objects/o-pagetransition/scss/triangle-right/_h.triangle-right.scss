@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'pagetransition';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+[data-transition="triangle-right"] {
+    $triangles: 2;
+
+    .o-#{$object-name} {
+
+        &__triangle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 100vh solid color(primary);
+            border-left: 100vw solid transparent;
+            transform: translate(100%, -100%);
+
+            &:nth-child(2) {
+                transform: rotate(180deg) translate(100%, -100%);
+                bottom: 0;
+                right: 0;
+                border-color: color(secondary);
+            }
+
+        }
+
+    }
+    
+}

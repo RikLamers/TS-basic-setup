@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* =============================================================================
+    CONFIG
+============================================================================= */
+
+$object-name: 'pagetransition';
+
+/* =============================================================================
+    BASE
+============================================================================= */
+
+[data-transition="triangle-fold"] {
+    $triangles: 2;
+
+    .o-#{$object-name} {
+
+        &__triangle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 50vh solid transparent;
+            border-left: 50vw solid color(primary);
+            border-bottom: 50vh solid transparent;
+            transform: translate(-100%, -100%);
+
+            &:nth-child(2) {
+                border-left: 50vw solid transparent;
+                border-right: 50vw solid transparent;
+                border-top: 50vh solid color(secondary);
+                border-bottom: none;
+                transform: translate(100%, -100%);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(180deg);
+                top: 0;
+                right: 0;
+                left: unset;
+                transform: translate(-100%, -100%);
+            }
+
+            &:nth-child(4) {
+                transform: rotate(180deg);
+                border-left: 50vw solid transparent;
+                border-right: 50vw solid transparent;
+                border-top: 50vh solid color(secondary);
+                border-bottom: none;
+                top: unset;
+                bottom: 0;
+                transform: translate(100%, -100%);
+            }
+
+        }
+
+    }
+    
+}
