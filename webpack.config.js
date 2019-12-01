@@ -10,7 +10,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: ['./src/index.js'],
+        main: ['./src/index.ts'],
         externals: ['./src/vendor.js']
     },
     output: {
@@ -33,13 +33,16 @@ module.exports = {
             })
         ]
     },
+    resolve: {
+        extensions: ['.ts', '.js', '.json']
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: "ts-loader"
                 }
             },
             {

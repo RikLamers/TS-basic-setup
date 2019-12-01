@@ -1,9 +1,9 @@
 import Highway from '@dogstudio/highway';
 import { TimelineLite } from 'gsap';
 
-import { Slider } from '../../../../modules/m-slider/js/m-slider.javascript';
+import { Slider } from '../../../../modules/m-slider/ts/m-slider.typescript';
 import { TextSlider } from '../../../../modules/m-text-slider/js/m-text-slider';
-import { Img } from '../../../o-img/js/o-img.javascript';
+import { Img } from '../../../o-img/ts/o-img.typescript';
 import { Intersection } from '../../../o-intersection/js/o-intersection.javascript';
 import { PageTransition } from '../../js/o-pagetransition.javascript';
 
