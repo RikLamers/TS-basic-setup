@@ -38,6 +38,9 @@ new ConnectionCheck('.o-connection-check');
 import DetectColorScheme from './components/objects/o-detect-color-scheme/ts/o-detect-color-scheme.typescript';
 new DetectColorScheme('.o-detect-color-scheme');
 
+// import Encrypter from './components/objects/o-encrypter/ts/o-encrypter.typescript';
+// new Encrypter('.o-encrypter');
+
 // import { Encrypter } from './components/objects/o-encrypter/js/o-encrypter.javascript';
 // import { Hamburger } from './components/objects/o-hamburger/js/o-hamburger.javascript'
 // import { Intersection } from './components/objects/o-intersection/js/o-intersection.javascript';
