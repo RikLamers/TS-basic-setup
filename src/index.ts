@@ -38,11 +38,17 @@ new ConnectionCheck('.o-connection-check');
 import DetectColorScheme from './components/objects/o-detect-color-scheme/ts/o-detect-color-scheme.typescript';
 new DetectColorScheme('.o-detect-color-scheme');
 
-// import { Encrypter } from './components/objects/o-encrypter/js/o-encrypter.javascript';
-// import { Hamburger } from './components/objects/o-hamburger/js/o-hamburger.javascript'
-// import { Intersection } from './components/objects/o-intersection/js/o-intersection.javascript';
-// import { Modal } from './components/objects/o-modal/js/o-modal.javascript';
-// import { PageTransition } from './components/objects/o-pagetransition/js/o-pagetransition.javascript';
+// import Encrypter from './components/objects/o-encrypter/ts/o-encrypter.typescript';
+// new Encrypter('.o-encrypter');
 
-// Rik Lamers - https://www.riklamers.com - hello@riklamers.com
+import Intersection from './components/objects/o-intersection/ts/o-intersection.typescript';
+new Intersection('.o-intersetion');
+
+import Modal from './components/objects/o-modal/ts/o-modal.typescript';
+new Modal('.o-modal');
+
+import Pagination from './components/objects/o-pagination/ts/o-pagination.typescript';
+new Pagination('.o-pagination');
+
+// Rik Lamers - https://www.riklamers.com - rik@riklamers.com
 // Developr lab - https://www.developr-lab.nl - rik@developr-lab.nl
