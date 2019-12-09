@@ -1,4 +1,5 @@
 const path = require('path');
+const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
@@ -6,7 +7,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const RemovePlugin = require('remove-files-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+
+const PATHS = {
+    src: path.join(__dirname, 'src')
+};
 
 module.exports = {
     entry: {
@@ -20,18 +26,18 @@ module.exports = {
     target: 'web',
     devtool: process.env.npm_lifecycle_event === 'build' ? '' : 'inline-source-map',
     optimization: {
-        minimizer: [
-            new UglifyJSPlugin({
-                uglifyOptions: {
-                    compress: {
-                        pure_funcs: ['console.log'],
-                    },
-                    mangle: {
-                        reserved: ['console.log']
-                    }
+        splitChunks: {
+            cacheGroups: {
+                styles: {
+                    name: '[name].[contenthash:9]',
+                    test: /\.css$/,
+                    chunks: 'all',
+                    enforce: true
                 }
-            })
-        ]
+            }
+        },
+        minimize: true,
+        minimizer: [new TerserPlugin()],
     },
     resolve: {
         extensions: ['.ts', '.js', '.json']
@@ -105,6 +111,11 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:9].css'
+        }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`, {
+                nodir: true
+            })
         }),
         new HtmlWebpackPlugin({
             inject: false,
