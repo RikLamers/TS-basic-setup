@@ -2,12 +2,10 @@ const path = require('path');
 const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const RemovePlugin = require('remove-files-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 const PATHS = {
@@ -21,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: process.env.npm_lifecycle_event === 'build' ? '[name].[chunkhash:9].js' : '[name].[hash:9].js'
+        filename: process.env.npm_lifecycle_event === 'build' ? '[name].[hash:9].js' : '[name].[hash:9].js'
     },
     target: 'web',
     devtool: process.env.npm_lifecycle_event === 'build' ? '' : 'inline-source-map',
@@ -29,7 +27,7 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 styles: {
-                    name: '[name].[contenthash:9]',
+                    name: '[name].[hash:9]',
                     test: /\.css$/,
                     chunks: 'all',
                     enforce: true
@@ -37,7 +35,17 @@ module.exports = {
             }
         },
         minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimizer: [
+            (compiler) => {
+                const TerserPlugin = require('terser-webpack-plugin');
+                new TerserPlugin({
+                    exclude: /\node_modules/,
+                    chunkFilter: (chunk) => {
+                        chunk.name === 'vendor' ? false : true;
+                    }
+                }).apply(compiler);
+            }
+        ]
     },
     resolve: {
         extensions: ['.ts', '.js', '.json']
@@ -110,7 +118,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash:9].css'
+            filename: '[name].[hash:9].css'
         }),
         new PurgecssPlugin({
             paths: glob.sync(`${PATHS.src}/**/*`, {
@@ -160,7 +168,6 @@ module.exports = {
             }
         
         }),
-        new WebpackMd5Hash(),
         new RemovePlugin({
             after: {
                 test: [
