@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: process.env.npm_lifecycle_event === 'build' ? '[name].[hash:9].js' : '[name].[hash:9].js'
+        filename: '[name].js'
     },
     target: 'web',
     devtool: process.env.npm_lifecycle_event === 'build' ? '' : 'inline-source-map',
@@ -27,7 +27,7 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 styles: {
-                    name: '[name].[hash:9]',
+                    name: '[name]',
                     test: /\.css$/,
                     chunks: 'all',
                     enforce: true
@@ -72,7 +72,7 @@ module.exports = {
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 use: [
-                    'file-loader?name=img/[hash:9]/[hash:9].[ext]',
+                    'file-loader?name=img/[name].[ext]',
                     {
                         loader: 'image-webpack-loader',
                         options: {
@@ -103,7 +103,7 @@ module.exports = {
                 test: /\.(woff|woff2|ttf)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'fonts/[hash:9]/[hash:9][name].[ext]'
+                    name: 'fonts/[name]/[name].[ext]'
                 },
             }
         ]
@@ -118,7 +118,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].[hash:9].css'
+            filename: '[name].css'
         }),
         new PurgecssPlugin({
             paths: glob.sync(`${PATHS.src}/**/*`, {
